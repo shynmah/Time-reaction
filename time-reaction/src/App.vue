@@ -1,7 +1,7 @@
 <template>
   <h1>Reaction Timer</h1>
-  <button @click="start">play</button>
-  <block v-if="isplaying"/>
+  <button @click="start " :disabled="isplaying">play</button>
+  <block v-if="isplaying" :delay="delay"/>
 </template>
 
 <script>

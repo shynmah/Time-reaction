@@ -1,10 +1,21 @@
 <template>
-  <div class="block">click me</div>
+  <div class="block" v-if="showBlock">click me</div>
 </template>
 
 <script>
 export default {
-
+    props :['delay'],
+    data(){
+      return{
+        showBlock:false
+      }
+    },
+    mounted(){
+      console.log('component mounted');
+      setTimeout(() =>{
+        this.showBlock=true
+      }, this.delay)
+    },
 }
 </script>
 
@@ -12,7 +23,7 @@ export default {
  .block{
     width: 400px;
     border-radius: 22px;
-    background-color: #0faf87;
+    background-color: #054233;
     color: white;
     text-align: center;
     padding: 100px 0;
